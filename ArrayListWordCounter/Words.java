@@ -31,6 +31,10 @@ public class Words {
                     buffer = buffer.replace("!", "");  // remove periods
                     buffer = buffer.replace("'", "");  // remove periods
                     buffer = buffer.replace("?", "");  // remove periods
+                    buffer = buffer.replace(";", "");  // remove periods
+                    buffer = buffer.replace(":", "");  // remove periods
+                    buffer = buffer.replace(")", "");  // remove periods
+                    buffer = buffer.replace("(", "");  // remove periods
                     buffer = buffer.toLowerCase();     // convert to lower case
 
                     // split the string into an array
@@ -70,6 +74,5 @@ public class Words {
             System.out.println(w.getWord() + "  " + w.getCount());
         }
         System.out.println("Number of words = " + this.numberWords);
-    }
-    
+    }  
 }
