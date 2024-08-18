@@ -2,22 +2,22 @@ package ArrayListWordCounter;
 
 public class Word {
     private String word;
-    private int count = 0;
+    private int cnt = 0;
     
     public Word(String word) {
         this.word = word;
-        this.count = 1;
+        this.cnt = 1;
     }
     
     public String getWord() {
         return this.word;
     }
     
-    public String getCount() {
-        return this.word;
+    public int getCount() {
+        return this.cnt;
     }
     
     public void incrementCount() {
-        this.count++;
+        this.cnt++;
     }
 }

@@ -13,9 +13,11 @@ public class ArrayListWordCounter {
         // define a string that contains text
         //String text = "To be or not to be, that is the question.";
         String buffer = "";
-        Map<String,Integer> wordMap = new TreeMap<>();
+        //Map<String,Integer> wordMap = new TreeMap<>();
         int numberWords = 0;
-
+        Words words = new Words("c:/temp/king-james.txt");
+        words.print();
+/*
         try {
 
             BufferedReader in
@@ -36,7 +38,7 @@ public class ArrayListWordCounter {
                     buffer = buffer.toLowerCase();     // convert to lower case
 
                     // split the string into an array
-                    String[] words = buffer.split(" ");
+                    String[] wrds = buffer.split(" ");
 
                     // define a map and fill it with words and their counts
                     for (String word : words) {
@@ -48,20 +50,16 @@ public class ArrayListWordCounter {
                         } else {                                // new word for map
                             wordMap.put(word, 1);
                         }
-                    }
+   
                 }    
             }
         } catch (IOException e) {
             System.out.println("Input file does not exist\n");
         }
-
+*/
         
             
 
-        // print the entries
-        for (Map.Entry entry : wordMap.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-        System.out.println("Total number of words = " + numberWords);
+       
     }
 }

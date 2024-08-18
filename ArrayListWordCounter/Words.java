@@ -7,12 +7,14 @@ import java.util.ArrayList;
 
 public class Words {
     ArrayList<Word> words;
-    
+    int numberWords = 0;
+
     public Words(String filename) {
         words = new ArrayList<>();
+        
         try {
             String buffer;
-            int numberWords = 0;
+            int index;
 
             BufferedReader in
                     = new BufferedReader(new FileReader("c:/temp/king-james.txt"));
@@ -36,13 +38,13 @@ public class Words {
 
                     // define a map and fill it with words and their counts
                     for (String word : line) {
-                        numberWords++;
-                        if (wordMap.containsKey(word)) {        // word is in map
-                            int oldCount = wordMap.get(word);
-                            int newCount = oldCount + 1;
-                            wordMap.put(word, newCount);
+                        this.numberWords++;
+                        index = find(word);
+                        if (index != -1) {        // word is in map
+                            words.get(index).incrementCount();
                         } else {                                // new word for map
-                            wordMap.put(word, 1);
+                            words.add(new Word(word));
+                            numberWords++;
                         }
                     }
                 }
@@ -53,7 +55,21 @@ public class Words {
     }
     
     public int find(String word) {
-        for 
+        int index = 0;
+        for (Word w : this.words) {
+            if (w.getWord().equals(word)) {
+                return index;
+            }        
+            index++;
+        }
+        return -1;
+    }
+    
+    public void print() {
+        for (Word w : this.words) {
+            System.out.println(w.getWord() + "  " + w.getCount());
+        }
+        System.out.println("Number of words = " + this.numberWords);
     }
     
 }
