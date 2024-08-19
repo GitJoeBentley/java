@@ -1,7 +1,7 @@
 package ArrayListWordCounter;
 
 public class Word {
-    private String word;
+    private final String word;
     private int cnt = 0;
     
     public Word(String word) {
